@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const config = require('../config.json');
+const fs = require('fs');
+const json = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
 function run(client, msg, args) {
 	// A console.log(client.commands);
@@ -7,7 +9,7 @@ function run(client, msg, args) {
 		.setAuthor(`${client.user.username} Commands`, client.user.avatarURL)
 		.setDescription('Developed with <3 by Rhy.\n ')
 		.setColor('GREEN')
-		.setFooter('v0.0.1 Beta');
+		.setFooter(`v${json.version}`);
 
 	const cmds = client.commands;
 	cmds.forEach(cmd => {
