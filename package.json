@@ -1,0 +1,17 @@
+{
+    "name": "discordbot",
+    "version": "0.0.1",
+    "private": true,
+    "main": "bot.js",
+    "dependencies": {
+        "discord.js": "*",
+        "eslint": "^4.13.0",
+        "fs": "0.0.1-security",
+        "node-opus": "*",
+        "youtube-search": "*",
+        "ytdl-core": "^0.18.3"
+    },
+    "devDependencies": {
+        "eslint-config-aqua": "^2.0.1"
+    }
+}
