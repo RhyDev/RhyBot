@@ -1,0 +1,15 @@
+{
+    "extends": "aqua",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "impliedStrict": true
+    },
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "off"
+    }
+}
