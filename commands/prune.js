@@ -1,7 +1,7 @@
 function run(client, msg, args) {
 	if (!isNaN(args[0])) {
 		// Get the guild member to get permissions
-		if (msg.member.hasPermission('ADMINISTRATOR')) {
+		if (msg.member.hasPermission('MANAGE_MESSAGES')) {
 			let msgCount = parseInt(args[0]);
 			// Get the channel logs
 			msg.channel.fetchMessages({ limit: 100 })
@@ -28,8 +28,8 @@ function run(client, msg, args) {
 const help = {
 	name: 'prune',
 	type: 'mod',
-	args: '<number of messages> <user>',
-	desc: 'Requires admin privileges, deletes the specified number of messages by user or in general.'
+	args: ' <number of messages> <user>',
+	desc: 'Requires `Manage Messages` permission, deletes the given number of messages by user or in general.'
 };
 
 module.exports = {
