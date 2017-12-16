@@ -1,15 +1,15 @@
 {
-    "name": "discordbot",
-    "version": "1.0.0",
+    "name": "rhybot",
+    "version": "1.0.1",
     "private": true,
     "main": "bot.js",
     "dependencies": {
-        "discord.js": "*",
+        "discord.js": "^11.2.1",
         "eslint": "^4.13.0",
         "fs": "0.0.1-security",
-        "node-opus": "*",
-        "youtube-search": "*",
-        "ytdl-core": "^0.18.3"
+        "node-opus": "^0.2.7",
+        "youtube-search": "^1.0.10",
+        "ytdl-core": "^0.18.4"
     },
     "devDependencies": {
         "eslint-config-aqua": "^2.0.1"
