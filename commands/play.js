@@ -124,8 +124,8 @@ function run(client, msg, args) {
 const help = {
 	name: 'play',
 	type: 'mus',
-	args: '<title | link>',
-	desc: 'Plays the given link or searches YouTube for the song and displays results, then plays the selected song.'
+	args: ' <title/link>',
+	desc: 'Plays the given link or searches YouTube for the song and displays results.'
 };
 
 module.exports = {

@@ -59,7 +59,7 @@ function run(client, msg, args) {
 const help = {
 	name: 'scramble',
 	type: 'gen',
-	args: '<number of teams> <team size> <players>',
+	args: ' <number of teams> <team size> <players>',
 	desc: 'Returns randomized teams.'
 };
 

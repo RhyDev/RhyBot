@@ -36,7 +36,7 @@ function run(client, msg, args) {
 const help = {
 	name: 'remove',
 	type: 'mus',
-	args: '<index>',
+	args: ' <index>',
 	desc: 'Removes the song at the given index from the queue.'
 };
 

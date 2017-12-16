@@ -11,7 +11,7 @@ function run(client, msg, args) {
 const help = {
 	name: 'roll',
 	type: 'gen',
-	args: '<sides>',
+	args: ' <sides>',
 	desc: 'Rolls dice.'
 };
 
