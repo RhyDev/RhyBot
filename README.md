@@ -1,7 +1,38 @@
 # RhyBot
-> Fully modular, multifunctional, self-hosted Discord bot built with the **[Discord.js](discord.js.org)** library.
+> Fully modular, multifunctional, self-hosted Discord bot built with the **[Discord.js](https://discord.js.org)** library.
 
-## Usage
+## Commands
+
+### General Commands
+| Command | Description |
+|---------|-------------|
+| `!help` | Returns command descriptions. |
+| `!ping` | Returns response time. |
+| `!roll <sides>` | Rolls dice. |
+| `!scramble <number of teams> <team size> <players>` | Returns randomized teams. |
+
+### Mod Commands
+| Command | Description | Permissions |
+|---------|-------------|-------------|
+| `!ban <user> <reason>` | Bans the given user with an optional reason. | `Ban Members` |
+| `!kick <user> <reason>` | Kicks the given user with an optional reason. | `Kick Members` |
+| `!unban <user> <reason>` | Unbans the given user with an optional reason. | `Ban Members` |
+| `!prune <number of messsages> <user>` | Deletes the given number of messages in general or from a given user. | `Manage Messages` |
+
+### Music Commands
+| Command | Description |
+|---------|-------------|
+| `!play <title/link>` | Plays the given link or searches YouTube for the song and displays results. |
+| `!song` | Returns information about the song currently playing. |
+| `!queue` | Returns the music queue. |
+| `!pause` | Pauses the currently playing song. |
+| `!resume` | Resumes the paused song. |
+| `!skip` | Plays the next song in the queue. |
+| `!stop` | Disconnects the bot from the voice channel and clears the queue. |
+| `!remove <index>` | Removes the song at the given index from the queue. |
+| `!shuffle` | Randomizes the order of songs in the queue. |
+
+## Setup
 
 ### Requirements
 Download and install **[Git](https://git-scm.com/downloads)** and **[Node](https://nodejs.org/en/)**.
@@ -37,7 +68,7 @@ Navigate to your bot folder and create a new file `config.json`, the file should
     "ytapi": "YT_API_KEY"
 }
 ```
-Replace `BOT_TOKEN` with your *Discord Bot Token* and `YT_API_KEY` with your *YouTube API Key*, refer to the **[Tokens](#Tokens)** section below.
+Replace `BOT_TOKEN` with your *Discord Bot Token* and `YT_API_KEY` with your *YouTube API Key*, refer to the **[Tokens](#tokens)** section below.
 You can set `prefix` to whatever phrase you want to trigger bot commands, e.g. **!ban** or **rhy.ban**.
 
 ### Running
@@ -53,6 +84,8 @@ node bot.js
 ```bash
 # Navigate to bot directory
 cd C:/Discord/RhyBot
+# Update the bot
+git pull
 # Update dependencies
 npm update
 ```
@@ -79,14 +112,26 @@ module.exports = {
 > Refer to [Discord.js docs](https://discord.js.org/#/docs/main/stable/general/welcome) or other commands for syntax.
 
 ## Tokens
-> Keep your tokens secret!
+*Keep your tokens secret!*
+
 ### Discord Bot Token
-0. Go to https://discordapp.com/developers/applications/me
-1. Select your bot
-2. In the Bot window reveal its token
+1. Go to https://discordapp.com/developers/applications/me
+2. Select your bot
+3. In the Bot window reveal its token
 
 ### YouTube API Key
-0. Go to https://console.developers.google.com/apis/credentials
-1. Click `Create crendentials`
-2. Select `API key` from the drop-down menu
+1. Go to https://console.developers.google.com/apis/credentials
+2. Click `Create crendentials`
+3. Select `API key` from the drop-down menu
 > Note that YouTube API calls are limited
+
+## Changelog
+
+### 1.0.1
+
+#### Bug Fixes
+- Added FFMPEG files required for bot voice connection
+- Changed * dependencies to correct versions to ensure package compatibility
+- Changed permission levels for mod commands to reflect each command instead of `ADMINISTRATOR`
+- Now checks if bot has permissions for mod commands
+- Updated README with command list, fixed formatting errors
