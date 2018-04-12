@@ -9,7 +9,7 @@ function run(client, msg, args) {
 	// Help commands
 	if ((!args[0] || args[0].toLowerCase() === 'all') && msg.guild) {
 		// Help header
-		var helpMsg = `To run a command in Collegiate PUBG, use \`${config.prefix}command\`. For example, \`${config.prefix}ping\`.\n`;
+		var helpMsg = `To run a command use \`${config.prefix}command\`. For example, \`${config.prefix}ping\`.\n`;
 		helpMsg += `For detailed command information use \`${config.prefix}help command\`. For example, \`${config.prefix}help ping\`.\n`;
 		helpMsg += `\n__**Available Commands in Collegiate PUBG**__\n`;
 
