@@ -17,7 +17,8 @@ const help = {
 	name: 'stop',
 	type: 'mus',
 	args: '',
-	desc: 'Disconnects bot from the voice channel and clears the queue.'
+	desc: 'Disconnects bot from the voice channel and clears the queue.',
+	ex: ''
 };
 
 module.exports = {

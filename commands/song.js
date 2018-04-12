@@ -23,7 +23,8 @@ const help = {
 	name: 'song',
 	type: 'mus',
 	args: '',
-	desc: 'Returns information about the song currently playing.'
+	desc: 'Returns information about the song currently playing.',
+	ex: ''
 };
 
 module.exports = {

@@ -11,7 +11,8 @@ const help = {
 	name: 'resume',
 	type: 'mus',
 	args: '',
-	desc: 'Resumes the paused song.'
+	desc: 'Resumes the paused song.',
+	ex: ''
 };
 
 module.exports = {

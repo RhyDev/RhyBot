@@ -6,7 +6,8 @@ const help = {
 	name: 'ping',
 	type: 'gen',
 	args: '',
-	desc: 'Returns response time.'
+	desc: 'Returns response time.',
+	ex: ''
 };
 
 module.exports = {

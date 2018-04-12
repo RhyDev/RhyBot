@@ -11,8 +11,9 @@ function run(client, msg, args) {
 const help = {
 	name: 'roll',
 	type: 'gen',
-	args: ' <sides>',
-	desc: 'Rolls dice.'
+	args: '<sides>',
+	desc: 'Rolls dice.',
+	ex: '6'
 };
 
 module.exports = {

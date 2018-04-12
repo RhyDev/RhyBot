@@ -9,7 +9,7 @@ function run(client, msg, args) {
 		msg.channel.send('Please provide an index of a song to remove, to see the queue type "music.queue".');
 		return;
 	}
-	if (server.queue.id.length <= 0) {
+	if (server.queue.songs.length <= 0) {
 		msg.channel.send('Cannot remove from an empty queue.');
 		return;
 	}
@@ -18,17 +18,13 @@ function run(client, msg, args) {
 	let index = args[0] - 1;
 
 	// Do the removal
-	if (index < server.queue.id.length && index >= 0) {
-		let removedSong = {
-			id: '',
-			title: ''
-		};
-		removedSong.id = server.queue.id.splice(index, 1);
-		removedSong.title = server.queue.title.splice(index, 1);
+	if (index < server.queue.songs.length && index >= 0) {
+		let removedSong = {};
+		removedSong = server.queue.songs.splice(index, 1);
 
 		msg.channel.send(`Removed \`${removedSong.title}\` from the queue.`);
 	} else {
-		msg.channel.send(`There are ${server.queue.id.length} item(s) in the queue,
+		msg.channel.send(`There are ${server.queue.songs.length} item(s) in the queue,
 			please specify a song within its range.`);
 	}
 }
@@ -36,8 +32,9 @@ function run(client, msg, args) {
 const help = {
 	name: 'remove',
 	type: 'mus',
-	args: ' <index>',
-	desc: 'Removes the song at the given index from the queue.'
+	args: '<index>',
+	desc: 'Removes the song at the given index from the queue.',
+	ex: '3'
 };
 
 module.exports = {

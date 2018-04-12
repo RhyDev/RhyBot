@@ -5,10 +5,10 @@ function run(client, msg, args) {
 	let server = servers[msg.guild.id];
 
 	// Print queue
-	if (server && server.queue.id.length > 0) {
+	if (server && server.queue.songs.length > 0) {
 		let string = `\`\`\`css\n[Queue]\n\n`;
-		for (let i = 0; i < server.queue.id.length; i++) {
-			string += `${i + 1} : ${server.queue.title[i]}\n`;
+		for (let i = 0; i < server.queue.songs.length; i++) {
+			string += `${i + 1} : ${server.queue.songs[i].title}\n`;
 		}
 		string += `\`\`\``;
 		msg.channel.send(string);
@@ -21,7 +21,8 @@ const help = {
 	name: 'queue',
 	type: 'mus',
 	args: '',
-	desc: 'Returns the music queue.'
+	desc: 'Returns the music queue.',
+	ex: ''
 };
 
 module.exports = {

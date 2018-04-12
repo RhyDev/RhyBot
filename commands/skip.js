@@ -14,7 +14,8 @@ const help = {
 	name: 'skip',
 	type: 'mus',
 	args: '',
-	desc: 'Plays the next song in the queue.'
+	desc: 'Plays the next song in the queue.',
+	ex: ''
 };
 
 module.exports = {

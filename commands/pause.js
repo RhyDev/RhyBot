@@ -11,7 +11,8 @@ const help = {
 	name: 'pause',
 	type: 'mus',
 	args: '',
-	desc: 'Pauses the currently playing song.'
+	desc: 'Pauses the currently playing song.',
+	ex: ''
 };
 
 module.exports = {

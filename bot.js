@@ -7,6 +7,7 @@ const fs = require('fs');
 const client = new Discord.Client({ disableEveryone: true });
 client.commands = new Discord.Collection();
 
+// Load commands
 fs.readdir('./commands/', (err, files) => {
 	if (err) {
 		console.error();
@@ -24,18 +25,22 @@ fs.readdir('./commands/', (err, files) => {
 // Ready event, required for bot to work
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setGame(`@${client.user.username} for help`);
+	client.user.setActivity(`@${client.user.username} help`);
 });
 
 // Event listener for msgs
 client.on('message', msg => {
-	if (msg.mentions.users.has(client.user.id) && (msg.content.match(/help/) || msg.content.match(/commands/))) {
-		let cmd = client.commands.get('help');
+	if (!msg.author.bot && msg.mentions.users.first() && msg.mentions.users.first().id === client.user.id) {
+		// Ignores the mention, then splits msg by spaces
+		const args = msg.content.slice(msg.mentions.users.first().id.length + 3).trim().split(/ +/g);
+		// Separates command from arguments
+		const command = args.shift().toLowerCase();
+
+		let cmd = client.commands.get(command);
 		if (cmd) {
-			cmd.run(client, msg, 'dm');
+			cmd.run(client, msg, args);
 		}
-	}
-	if (msg.content.startsWith(config.prefix) && !msg.author.bot && msg.channel.type !== 'dm') {
+	} else if (!msg.author.bot && msg.content.startsWith(config.prefix)) {
 		// Ignores the prefix, then splits msg by spaces
 		const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
 		// Separates command from arguments
