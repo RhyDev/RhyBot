@@ -7,12 +7,12 @@
         "start": "node bot.js"
     },
     "dependencies": {
-        "discord.js": "^11.2.1",
-        "eslint": "^4.13.0",
+        "discord.js": "^11.3.2",
+        "eslint": "^4.19.1",
         "fs": "0.0.1-security",
         "node-opus": "^0.2.7",
-        "youtube-search": "^1.0.10",
-        "ytdl-core": "^0.18.4"
+        "youtube-search": "^1.1.0",
+        "ytdl-core": "^0.20.2"
     },
     "devDependencies": {
         "eslint-config-aqua": "^2.0.1"

@@ -17,10 +17,9 @@ function run(client, msg, args) {
 	function play(connection, message) {
 		let server = servers[message.guild.id];
 
-		server.dispatcher = connection.playStream(ytdl(server.queue.songs[0].id, { filter: 'audioonly' }));
+		server.dispatcher = connection.playStream(ytdl(server.queue.songs[0].link, { filter: 'audioonly' }));
 
-		server.queue.songs.shift();
-		server.currentSongInfo = server.queue.songs.first();
+		server.currentSongInfo = server.queue.songs.shift();
 
 		server.dispatcher.on('end', () => {
 			if (server.queue.songs[0]) {
@@ -64,7 +63,7 @@ function run(client, msg, args) {
 				string += `${i + 1} : ${results[i].title}\n`;
 			}
 			string += `\`\`\``;
-			string += '**To queue a song, type music.play and the index of the song you want to play.**';
+			string += `**To queue a song type the index of the song you want to play.**`;
 			msg.channel.send(string);
 			msg.channel.awaitMessages(num =>
 				num.author === msg.author && num >= 1 && Number.isInteger(Number(num)), { max: 1, time: 10000 })
@@ -75,7 +74,6 @@ function run(client, msg, args) {
 					// Enqueue the chosen song
 					let song = results[collected.first().content - 1];
 					server.queue.songs.push(song);
-					console.log(server.queue);
 
 					msg.channel.send(new Discord.RichEmbed()
 						.setAuthor(msg.author.username, msg.author.avatarURL)
