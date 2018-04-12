@@ -12,6 +12,14 @@
         "no-console": "off",
         "no-unused-vars": "off",
         "max-len": "off",
-        "prefer-destructuring": "off"
+        "no-undef": "off",
+        "prefer-destructuring": "off",
+        "max-depth": "off",
+        "complexity": "off",
+        "no-warning-comments": "off",
+        "handle-callback-err": "off",
+        "no-shadow": "off",
+        "no-return-assign": "off",
+        "no-process-env": "off"
     }
 }
