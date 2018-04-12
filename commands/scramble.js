@@ -31,7 +31,7 @@ function run(client, msg, args) {
 				teams[i][teams[i].length] = tempPlayers.splice(rand, 1);
 			}
 		}
-		playerCount = (players.length - playerCount) / (numTeams - (i + 1));
+		playerCount = Math.ceil(tempPlayers.length) / (numTeams - (i + 1));
 	}
 
 	// Create a string array for the players on each team to simplify output
